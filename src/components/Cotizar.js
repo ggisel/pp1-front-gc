@@ -102,29 +102,14 @@ const Cotizar = () => {
                                 </tr>
                             ))} 
 
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Si</td>
-                                <Button variant="primary">Cotizar</Button>{' '}
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>No</td>
-                                <Button variant="primary">Cotizar</Button>{' '}
-                            </tr>
+                            {/* paga tener 2 datos en uno
                             <tr>
                                 <td>3</td>
                                 <td colSpan={2}>Larry the Bird</td>
                                 <td>@twitter</td>
                                 <td>Si</td>
                                 <Button variant="primary">Cotizar</Button>{' '}
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </Table>
                 </div>
