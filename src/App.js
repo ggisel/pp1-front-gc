@@ -5,21 +5,26 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Inicio from './components/Inicio';
 import Header from './components/Header';
 import Cotizar from './components/Cotizar';
+import NuevaPagina from './components/NuevaPagina';
 
 function App() {
   return (
     <div className="App">
 
-<BrowserRouter>
-<Routes>
-  <Route path='/' element={ <Header /> }>
-    <Route index element={ <Inicio /> } />
-    <Route path='cotizar' element={ <Cotizar /> } />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Header />}>
+            <Route index element={<Inicio />} />
+            <Route path='cotizar' element={<Cotizar />} />
 
-    <Route path='*' element={ <Navigate replace to="/"/> }/>
-  </Route>
-</Routes> 
-</BrowserRouter>
+            <Route path='*' element={<Navigate replace to="/" />} />
+
+            <Route path='nueva-pagina' element={<NuevaPagina />} />
+
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
 
     </div>
   );

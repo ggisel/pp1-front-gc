@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const Cotizar = () => {
     //setear los hooks useState
@@ -98,7 +99,9 @@ const Cotizar = () => {
                                     <td>{user.marca}</td>
                                     <td>{user.modelo}</td>
                                     <td>{user.reserva}</td>
+                                    <Link to="/nueva-pagina">
                                     <Button variant="primary">Cotizar</Button>{' '}
+                                    </Link>
                                 </tr>
                             ))} 
 

@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -12,7 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+*/
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -43,4 +43,7 @@ section {
 }
 .navBg {
   background-color: #272727;
+}
+.formulario{
+  color: #000;
 }
