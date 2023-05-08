@@ -4,20 +4,19 @@ import Button from 'react-bootstrap/Button';
 
 const Cotizar = () => {
     //setear los hooks useState
-    const [users, setUsers] = useState([])
-    const [search, setSearch] = useState("")
-    const [resultes, setResults] = useState([]);
+  const [ users, setUsers ] = useState([])
+  const [ search, setSearch ] = useState("")//valores del input
 
-    //función para traer los datos de la API
-    //const URL = 'https://jsonplaceholder.typicode.com/users'//sacar datos de un json
-    const URL = [
+  //función para traer los datos de la API
+  const URL = 'https://jsonplaceholder.typicode.com/users'//sacar datos de un json
+    const localData = [
         {
             "id": 1,
             "patente": 1,
             "sucursal": "cerca",
             "marca": "Bret",
             "modelo": "ESSENCE",
-            "reservado": "si"
+            "reserva": "si"
         },
         {
             "id": 2,
@@ -25,55 +24,52 @@ const Cotizar = () => {
             "sucursal": "lejos",
             "marca": "way",
             "modelo": "Sincere@april.biz",
-            "reservado": "No"
+            "reserva": "No"
         }
     ]
 
-    const showData = async () => {
-        const response = await fetch(URL)
-        const data = await response.json()
-        //console.log(data)
-        setUsers(data)
-        //
-        setResults(data);
-    }
-    //función de búsqueda
-    const searcher = (e) => {
-        //----------
-        const value = e.target.value.toLowerCase();
-        const filteredData = users.filter((user) => {
-            return (
-                user.sucursal.toLowerCase().includes(value)
-            );
-        });
-        setResults(filteredData);
-        //-------
-        setSearch(e.target.value)
-    }
-    //metodo de filtrado 1 
-    /*  let results = []
-    if(!search)
-    {
-        results = users
-    }else{
-         results = users.filter( (dato) =>
-         dato.name.toLowerCase().includes(search.toLocaleLowerCase())
-     )
-    } */
+  //datos que traemos
+  const showData = async () => {
+    const response = await fetch(URL)
+    const data = await response.json()
+    //console.log(data)
+    setUsers(data)
+  }   
+   //función de búsqueda
+  const searcher = (e) => {
+      setSearch(e.target.value)   
+  }
+   //metodo de filtrado 1 
+   /*  let results = []
+   if(!search)
+   {
+       results = users
+   }else{
+        results = users.filter( (dato) =>
+        dato.name.toLowerCase().includes(search.toLocaleLowerCase())
+    )
+   } */
 
-    //metodo de filtrado 2   
-   const results = !search ? users : users.filter((dato)=> dato.sucursal.toLowerCase().includes(search.toLocaleLowerCase()));
-  // const results = !search ? users : users.filter((dato)=> dato.modelo.toLowerCase().includes(search.toLocaleLowerCase()))
-  
-   useEffect( ()=> {
+   //metodo de filtrado 2   -recomendado- filtra por modelo o marca
+  // const results = !search ? users : users.filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+  const results = !search ? users : users.filter((dato)=> dato.modelo.toLowerCase().includes(search.toLocaleLowerCase()) || dato.marca.toLowerCase().includes(search.toLocaleLowerCase()))
+   
+  //pruebo lo de abajo
+   /*useEffect( ()=> {
     showData()
-  }, [])
-
-    //renderizamos la vista
+  }, [])*/
+  useEffect(() => {
+    //mostrar datos locales
+    setUsers(localData);
+    //mostrar datos desde API
+    //showData()
+}, [])
+  
+  //renderizamos la vista
     return (
         <>
             {/* filtro */}
-            <div><input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control' />
+            <div><input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
 
                 {/* tabla */}
                 <div>
@@ -89,8 +85,14 @@ const Cotizar = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {results.map((user) => (
-                                <tr key={user.id}>
+                       {/* { results.map( (user) => (
+                    <tr key={user.id}>
+                        <td>{user.name}</td>
+                        <td>{user.username}</td>
+                    </tr>                    
+                ))}*/}
+                             {results.map( (user) => (
+                            <tr key={user.id}> 
                                     <td>{user.patente}</td>
                                     <td>{user.sucursal}</td>
                                     <td>{user.marca}</td>
@@ -98,7 +100,7 @@ const Cotizar = () => {
                                     <td>{user.reserva}</td>
                                     <Button variant="primary">Cotizar</Button>{' '}
                                 </tr>
-                            ))}
+                            ))} 
 
                             <tr>
                                 <td>1</td>
