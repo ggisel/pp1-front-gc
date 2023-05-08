@@ -4,99 +4,126 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+/*
+cuanto presion el boton cotizar pongo un input donde tiene que rellenar esto datos 
+*Sucursal : String ---> (se obtiene del auto logrado)
+* DniCliente : String --> (esto identifiqué que se tiene que pedir, porque como vimos, un auto puede estar 
+    reservado pero otra persona puede ir físicamente y comprarlo)
+* Patente : String --> auto
+* IdVendedor : String --> usuario logeado
+* Garantía extendida : boleean --> con un check
 
+
+de aca la sucursal la saca del auto que filtro en la tabla. el dni ese que le pedimos obligatorio, la 
+patente del auto que se filtro, el id del vendedor lo consultamos por la sesion que tiene iniciada el usuario, 
+y la garantia extendida del check que tenemos que hacer
+
+*/
 const NuevaPagina = () => {
-    
-  const [validated, setValidated] = useState(false);
+
+    const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
         }
-      
+
         setValidated(true);
-      };
-      
-      return (
+    };
 
-    <div class="formulario">
-        <h1>NuevaPagina</h1>
+    return (
 
-  <Form noValidate validated={validated} onSubmit={handleSubmit}>
-    <Row className="mb-3">
-      <Form.Group as={Col} md="4" controlId="validationCustom01">
-        <Form.Label>First name</Form.Label>
-        <Form.Control
-          required
-          type="text"
-          placeholder="First name"
-          defaultValue="Mark"
-        />
-        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group as={Col} md="4" controlId="validationCustom02">
-        <Form.Label>Last name</Form.Label>
-        <Form.Control
-          required
-          type="text"
-          placeholder="Last name"
-          defaultValue="Otto"
-        />
-        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-        <Form.Label>Username</Form.Label>
-        <InputGroup hasValidation>
-          <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-          <Form.Control
-            type="text"
-            placeholder="Username"
-            aria-describedby="inputGroupPrepend"
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Please choose a username.
-          </Form.Control.Feedback>
-        </InputGroup>
-      </Form.Group>
-    </Row>
-    <Row className="mb-3">
-      <Form.Group as={Col} md="6" controlId="validationCustom03">
-        <Form.Label>City</Form.Label>
-        <Form.Control type="text" placeholder="City" required />
-        <Form.Control.Feedback type="invalid">
-          Please provide a valid city.
-        </Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group as={Col} md="3" controlId="validationCustom04">
-        <Form.Label>State</Form.Label>
-        <Form.Control type="text" placeholder="State" required />
-        <Form.Control.Feedback type="invalid">
-          Please provide a valid state.
-        </Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group as={Col} md="3" controlId="validationCustom05">
-        <Form.Label>Zip</Form.Label>
-        <Form.Control type="text" placeholder="Zip" required />
-        <Form.Control.Feedback type="invalid">
-          Please provide a valid zip.
-        </Form.Control.Feedback>
-      </Form.Group>
-    </Row>
-    <Form.Group className="mb-3">
-      <Form.Check
-        required
-        label="Agree to terms and conditions"
-        feedback="You must agree before submitting."
-        feedbackType="invalid"
-      />
-    </Form.Group>
-    <Button type="submit">Submit form</Button>
-  </Form>
-    </div>
-  )
+        <div >
+            <h1 id="titulo-formulario">Cotización</h1>
+
+
+            <Form id="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
+                {/* me fijo */}
+                {/* -----Sucursal------ */}
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                    <Form.Label column sm="2">
+                        Sucursal:
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control plaintext readOnly defaultValue="Surcusal del vendedor" />
+                    </Col>
+                </Form.Group>
+                {/*<Form.Group as={Row} md="6" controlId="validationCustom03">
+                    <Form.Label column >Sucursal:</Form.Label>
+                    <div class="alert alert-primary mt-2 mb-4" role="alert">
+                        Agrego datos <span id="totalPago" class="align-middle"></span>
+                    </div>
+                </Form.Group> */}
+
+                {/* -----DNI del Cliente------ */}
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                    <Form.Label column sm="2">
+                        DNI del Cliente:
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />
+                        <Form.Control.Feedback type="invalid">
+                            Por favor, proporcione un DNI válido.
+                        </Form.Control.Feedback>
+                    </Col>
+                </Form.Group>
+
+                {/*<Form.Group as={Row} md="6" controlId="validationCustom03">
+                    <Form.Label column sm={2}>DNI del Cliente</Form.Label>
+                    <Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />
+                    <Form.Control.Feedback type="invalid">
+                        Por favor, proporcione un DNI válido.
+                    </Form.Control.Feedback>
+                </Form.Group>*/}
+
+                {/* -----Patente------ */}
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                    <Form.Label column sm="2">
+                        Patente:
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control plaintext readOnly defaultValue="Patente de auto elegido" />
+                    </Col>
+                </Form.Group>
+                {/*    <Form.Group as={Row} md="6" controlId="validationCustom04">
+                    <Form.Label column>Patente</Form.Label>
+                    <Form.Control type="text" placeholder="Patente" required />
+                    <Form.Control.Feedback type="invalid">
+                        Por favor, proporcione una Patente válida.
+                    </Form.Control.Feedback>
+            </Form.Group>*/}
+
+                {/* -----IdVendedor------ */}
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                    <Form.Label column sm="2">
+                        IdVendedor:
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control plaintext readOnly defaultValue="Id del Vendedor" />
+                    </Col>
+                </Form.Group>
+                {/* <Form.Group as={Row} className="mb-3" md="6" controlId="validationCustom05">
+                    <Form.Label as={Col} >IdVendedor</Form.Label>
+                    <Form.Control type="text" placeholder="IdVendedor" required />
+                    <Form.Control.Feedback type="invalid">
+                        Por favor, proporcione un IdVendedor válido.
+                    </Form.Control.Feedback>
+        </Form.Group>*/}
+
+                {/* -----Garantía extendida------ */}
+                <Form.Group className="mb-3">
+                    <Form.Check
+                        label="Garantía extendida"
+                    //feedback="You must agree before submitting."
+                    // feedbackType="invalid"
+                    />
+                </Form.Group>
+                <Button type="submit">Finalizar</Button>
+            </Form>
+        </div>
+    )
 }
 
 export default NuevaPagina;

@@ -44,6 +44,11 @@ section {
 .navBg {
   background-color: #272727;
 }
-.formulario{
+#titulo-formulario{
   color: #000;
+}
+
+#formulario{
+  color: #000;
+  margin:2em;
 }
