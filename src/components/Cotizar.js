@@ -6,10 +6,11 @@ const Cotizar = () => {
     //setear los hooks useState
     const [users, setUsers] = useState([])
     const [search, setSearch] = useState("")
+    const [resultes, setResults] = useState([]);
 
     //función para traer los datos de la API
-    const URL = 'https://jsonplaceholder.typicode.com/users'//sacar datos de un json
-    /*const URL = [
+    //const URL = 'https://jsonplaceholder.typicode.com/users'//sacar datos de un json
+    const URL = [
         {
             "id": 1,
             "patente": 1,
@@ -26,17 +27,27 @@ const Cotizar = () => {
             "modelo": "Sincere@april.biz",
             "reservado": "No"
         }
-
-    ];*/
+    ]
 
     const showData = async () => {
         const response = await fetch(URL)
         const data = await response.json()
         //console.log(data)
         setUsers(data)
+        //
+        setResults(data);
     }
     //función de búsqueda
     const searcher = (e) => {
+        //----------
+        const value = e.target.value.toLowerCase();
+        const filteredData = users.filter((user) => {
+            return (
+                user.sucursal.toLowerCase().includes(value)
+            );
+        });
+        setResults(filteredData);
+        //-------
         setSearch(e.target.value)
     }
     //metodo de filtrado 1 
@@ -51,7 +62,7 @@ const Cotizar = () => {
     } */
 
     //metodo de filtrado 2   
-   const results = !search ? users : users.filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+   const results = !search ? users : users.filter((dato)=> dato.sucursal.toLowerCase().includes(search.toLocaleLowerCase()));
   // const results = !search ? users : users.filter((dato)=> dato.modelo.toLowerCase().includes(search.toLocaleLowerCase()))
   
    useEffect( ()=> {
