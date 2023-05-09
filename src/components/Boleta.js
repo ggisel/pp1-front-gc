@@ -1,7 +1,8 @@
 import React from 'react'
 import { Container, Row, Col, Table } from 'react-bootstrap';
-/*
-y despues le devuelve esta boleta por asi decirlos con todos estos datos  
+import Button from 'react-bootstrap/Button';
+
+/*y despues le devuelve esta boleta por asi decirlos con todos estos datos  
       Long id; 
       String sucursal; 
       Long numeroCotizacion; 
@@ -83,7 +84,9 @@ const Boleta = (props) => {
           </tr>
         </tbody>
       </Table>
+      <Button type="text">Imprimir</Button>
     </Container>
+    
     </div>
 
 
