@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 
 /*
 cuanto presion el boton cotizar pongo un input donde tiene que rellenar esto datos 
@@ -20,9 +20,21 @@ patente del auto que se filtro, el id del vendedor lo consultamos por la sesion 
 y la garantia extendida del check que tenemos que hacer
 
 */
-const NuevaPagina = (props) => {
-    /*------ Agrego esto ------------
-    const [patente, setPatente] = useState("");
+
+const NuevaPagina = ({props}) => {
+    const patente = "ABC123";
+    const sucursal = " lejos";
+    const marca = "way";
+    const modelo = "Sincere";
+    const  idVendedor="Id del Vendedor";
+
+
+    /*agrego 9-05 
+    const location = useLocation();
+  const patente = location.state.patente;
+  console.log(props);
+    /*------ Agrego esto ------------*//*
+    const [patente, setPatente] = useState(props);
 
     // Actualizamos el estado con la patente recibida a través de las props
     useEffect(() => {
@@ -30,9 +42,8 @@ const NuevaPagina = (props) => {
     }, [props.patente]);
     /*--------------------------------- */
 
-
-
-
+/*//anda el pasar datos
+const patente="2";*/
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
@@ -96,7 +107,7 @@ const NuevaPagina = (props) => {
                         Patente:
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control plaintext readOnly defaultValue="Patente de auto elegido" />
+                        <Form.Control plaintext readOnly defaultValue={patente} />
                     </Col>
                 </Form.Group>
                 {/*    <Form.Group as={Row} md="6" controlId="validationCustom04">

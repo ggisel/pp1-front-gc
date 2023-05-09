@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import NuevaPagina from './NuevaPagina';
 
 /*agrego*/
 import Accordion from 'react-bootstrap/Accordion';
@@ -44,20 +45,84 @@ const Cotizar = () => {
     const localData = [
         {
             "id": 1,
-            "patente": 1,
-            "sucursal": "cerca",
-            "marca": "Bret",
-            "modelo": "ESSENCE",
+            "patente": "ABC123",
+            "sucursal": "Sucursal A",
+            "marca": "Toyota",
+            "modelo": "Corolla",
             "reserva": "si"
         },
         {
             "id": 2,
-            "patente": 1234,
-            "sucursal": "lejos",
-            "marca": "way",
-            "modelo": "Sincere@april.biz",
-            "reserva": "No"
-        }
+            "patente": "DEF456",
+            "sucursal": "Sucursal B",
+            "marca": "Honda",
+            "modelo": "Civic",
+            "reserva": "no"
+        },
+        {
+            "id": 3,
+            "patente": "GHI789",
+            "sucursal": "Sucursal C",
+            "marca": "Ford",
+            "modelo": "Mustang",
+            "reserva": "si"
+          },
+          {
+            "id": 4,
+            "patente": "JKL012",
+            "sucursal": "Sucursal A",
+            "marca": "Chevrolet",
+            "modelo": "Camaro",
+            "reserva": "no"
+          },
+          {
+            "id": 5,
+            "patente": "MNO345",
+            "sucursal": "Sucursal B",
+            "marca": "Volkswagen",
+            "modelo": "Golf",
+            "reserva": "si"
+          },
+          {
+            "id": 6,
+            "patente": "PQR678",
+            "sucursal": "Sucursal C",
+            "marca": "Toyota",
+            "modelo": "Rav4",
+            "reserva": "no"
+          },
+          {
+            "id": 7,
+            "patente": "STU901",
+            "sucursal": "Sucursal A",
+            "marca": "Mazda",
+            "modelo": "CX-5",
+            "reserva": "si"
+          },
+          {
+            "id": 8,
+            "patente": "VWX234",
+            "sucursal": "Sucursal B",
+            "marca": "Nissan",
+            "modelo": "Sentra",
+            "reserva": "no"
+          },
+          {
+            "id": 9,
+            "patente": "YZA567",
+            "sucursal": "Sucursal C",
+            "marca": "Honda",
+            "modelo": "Accord",
+            "reserva": "si"
+          },
+          {
+            "id": 10,
+            "patente": "BCD890",
+            "sucursal": "Sucursal A",
+            "marca": "Ford",
+            "modelo": "Explorer",
+            "reserva": "no"
+          }
     ]
 
     //datos que traemos
@@ -131,13 +196,13 @@ const Cotizar = () => {
                                     <td>{user.marca}</td>
                                     <td>{user.modelo}</td>
                                     <td>{user.reserva}</td>
-                                    <Link to="/nueva-pagina">
 
-                                    {/*---------- Agrego consegui patente  -------*/}
+                            
+                                     {/*---------- Agrego consegui patente  -------*/}
+                                    <Link to={{pathname:"/nueva-pagina",state: { patente: "2"} }} >
+                                    {/*-------- ---------------*/}
                                     
-                                   <Button variant="primary">Cotizar </Button>{''}
-                                   {/*-------- ---------------*/}
-
+                                    <Button variant="primary">Cotizar </Button>{''}
                                     </Link>
                                     
                                    {/*<Accordion defaultActiveKey="0">
@@ -163,6 +228,7 @@ const Cotizar = () => {
                     </Table>
                 </div>
             </div>
+           {/*<NuevaPagina patente="2"/>*/} 
         </>
     )
 }
