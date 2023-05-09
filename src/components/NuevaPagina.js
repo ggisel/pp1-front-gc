@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import { Link } from 'react-router-dom';
+
 /*
 cuanto presion el boton cotizar pongo un input donde tiene que rellenar esto datos 
 *Sucursal : String ---> (se obtiene del auto logrado)
@@ -19,7 +20,18 @@ patente del auto que se filtro, el id del vendedor lo consultamos por la sesion 
 y la garantia extendida del check que tenemos que hacer
 
 */
-const NuevaPagina = () => {
+const NuevaPagina = (props) => {
+    /*------ Agrego esto ------------
+    const [patente, setPatente] = useState("");
+
+    // Actualizamos el estado con la patente recibida a través de las props
+    useEffect(() => {
+      setPatente(props.patente);
+    }, [props.patente]);
+    /*--------------------------------- */
+
+
+
 
     const [validated, setValidated] = useState(false);
 
@@ -120,7 +132,13 @@ const NuevaPagina = () => {
                     // feedbackType="invalid"
                     />
                 </Form.Group>
+                {/*<Button type="submit">Finalizar</Button>*/}
+
+                
+                <Link to="/boleta-cotizacion">
                 <Button type="submit">Finalizar</Button>
+                </Link>
+                
             </Form>
         </div>
     )

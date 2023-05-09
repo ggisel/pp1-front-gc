@@ -6,8 +6,22 @@ import Inicio from './components/Inicio';
 import Header from './components/Header';
 import Cotizar from './components/Cotizar';
 import NuevaPagina from './components/NuevaPagina';
+import Boleta from './components/Boleta';
+import Footer from './components/Footer';
+
+/*----- Agrego conseguir patente--------*/
+import { useState } from 'react'; // importar useState
+
+/*function handleAutoElegido(patente) {
+  setPatenteSeleccionada(patente.patente);
+}
+/*---------------*/
+
 
 function App() {
+  const [patenteSeleccionada, setPatenteSeleccionada] = useState(''); // definir la variable
+
+  
   return (
     <div className="App">
 
@@ -19,8 +33,13 @@ function App() {
 
             <Route path='*' element={<Navigate replace to="/" />} />
 
+            {/*boton de cotizar */}
             <Route path='nueva-pagina' element={<NuevaPagina />} />
 
+            {/*boton de finalizar */}
+            <Route path='boleta-cotizacion' element={<Boleta />} />
+
+            <Route path='/' element={<Footer />} />
           </Route>
 
         </Routes>

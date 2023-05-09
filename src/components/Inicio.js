@@ -2,7 +2,9 @@ import React from 'react'
 
 const Inicio = () => {
   return (
-    <div>inicio</div>
+    <div>
+      <h1 id="titulo-formulario">Inicio</h1>
+    </div>
   )
 }
 

@@ -12,7 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-*/
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/
 section {
   color: #fff;
   background-color: #f5f1f1b0;
@@ -44,11 +44,14 @@ section {
 .navBg {
   background-color: #272727;
 }
-#titulo-formulario{
+#titulo-formulario,#boleta{
   color: #000;
 }
 
 #formulario{
   color: #000;
   margin:2em;
+}
+#order{
+  color: #000;
 }

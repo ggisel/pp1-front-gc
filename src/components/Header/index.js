@@ -6,7 +6,7 @@ const Header = () => {
     <>
     <Navbar className="navBg" variant="dark" expand="lg">
         <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to="/" >
             <img
               src="logo192.png"
               width="30"
