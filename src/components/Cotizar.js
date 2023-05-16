@@ -218,6 +218,7 @@ const Cotizar = () => {
                                 <th>Patente</th>
                                 <th>Sucursal</th>
                                 <th>Año</th>
+                                <th>Marca</th>
                                 <th>Modelo</th>
                                 <th>Kilometraje</th>
                                 <th>Combustible</th>
@@ -238,6 +239,7 @@ const Cotizar = () => {
                                     <td>{user.patente}</td>
                                     <td>{user.sucursal}</td>
                                     <td>{user.anio}</td>
+                                    <td>{user.marca}</td>
                                     <td>{user.modelo}</td>
                                     <td>{user.kilometraje}</td>
                                     <td>{user.combustible}</td>
