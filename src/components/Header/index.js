@@ -15,7 +15,7 @@ const Header = () => {
               alt="React Bootstrap logo"
             />
           </Navbar.Brand>
-            <Navbar.Brand as={Link} to="/" >MiEmpresa</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" >KarU</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
