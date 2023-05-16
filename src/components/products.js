@@ -7,7 +7,7 @@ export const products=[
     "marca": "Toyota",
     "modelo": "Corolla",
     "kilometraje": 5000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "no",
     "reserva": "si"
   },
@@ -19,7 +19,7 @@ export const products=[
     "marca": "Honda",
     "modelo": "Civic",
     "kilometraje": 8000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "no",
     "reserva": "no"
   },
@@ -31,7 +31,7 @@ export const products=[
     "marca": "Ford",
     "modelo": "Mustang",
     "kilometraje": 3000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "si",
     "reserva": "si"
   },
@@ -43,7 +43,7 @@ export const products=[
     "marca": "Chevrolet",
     "modelo": "Camaro",
     "kilometraje": 2000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "no",
     "reserva": "no"
   },
@@ -55,7 +55,7 @@ export const products=[
     "marca": "Volkswagen",
     "modelo": "Golf",
     "kilometraje": 7000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "no",
     "reserva": "si"
   },
@@ -79,7 +79,7 @@ export const products=[
     "marca": "Mazda",
     "modelo": "CX-5",
     "kilometraje": 4000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "si",
     "reserva": "si"
   },
@@ -91,7 +91,7 @@ export const products=[
     "marca": "Nissan",
     "modelo": "Sentra",
     "kilometraje": 3000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "no",
     "reserva": "no"
   },
@@ -103,7 +103,7 @@ export const products=[
     "marca": "Honda",
     "modelo": "Accord",
     "kilometraje": 6000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "no",
     "reserva": "si"
     },
@@ -115,8 +115,20 @@ export const products=[
     "marca": "Ford",
     "modelo": "Explorer",
     "kilometraje": 8000,
-    "combustible": "Gasolina",
+    "combustible": "Nafta",
     "importado": "si",
     "reserva": "no"
+    },
+    {
+      "id": 21,
+      "patente": "XYZ987",
+      "sucursal": "Sucursal B",
+      "marca": "Volkswagen",
+      "anio": 2021,
+      "modelo": "Tiguan",
+      "kilometraje": 5000,
+      "combustible": "Diésel",
+      "importado": "no",
+      "reserva": "si"
     }
 ]
