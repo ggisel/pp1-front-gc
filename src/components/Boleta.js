@@ -55,24 +55,24 @@ const Boleta = (props) => {
 
   return (
     <>
-      <div id="boleta" class="">
+      <div id="boleta" className="">
       <Container className="my-5">
       <h1>Boleta de Cotización</h1>
       <Row className="my-4">
         <Col xs={6}>
-          <h4>Sucursal: <h5 id="resultado">{sucursal}</h5></h4>
-          <h4>Número de cotización: <h5 id="resultado">{numeroCotizacion}</h5></h4>
-          <h4>ID del vendedor:<h5 id="resultado"> {idVendedor}</h5></h4>
+          <h4>Sucursal: <span id="resultado">{sucursal}</span></h4>
+          <h4>Número de cotización: <span id="resultado">{numeroCotizacion}</span></h4>
+          <h4>ID del vendedor:<span id="resultado"> {idVendedor}</span></h4>
         </Col>
         <Col xs={6}>
-          <h4>ID: <h5 id="resultado">{id}</h5></h4>
-          <h4>Patente: <h5 id="resultado">{patente}</h5></h4>
-          <h4>DNI del cliente: <h5 id="resultado">{dniCliente}</h5></h4>
+          <h4>ID: <span id="resultado">{id}</span></h4>
+          <h4>Patente: <span id="resultado">{patente}</span></h4>
+          <h4>DNI del cliente: <span id="resultado">{dniCliente}</span></h4>
         </Col>
       </Row>
       <Row className="my-4">
         <Col xs={6}>
-          <h4>Fecha: <h5 id="resultado">{fecha}</h5></h4>
+          <h4>Fecha: <span id="resultado">{fecha}</span></h4>
         </Col>
       </Row>
       <Table striped bordered hover responsive>

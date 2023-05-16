@@ -196,8 +196,8 @@ const Cotizar = () => {
                                     <td>{user.marca}</td>
                                     <td>{user.modelo}</td>
                                     <td>{user.reserva}</td>
-
-                            
+                                    
+                                    <td>
                                      {/*---------- Agrego consegui patente  -------*/}
                                      {/*---------- interpolacion de varieables  -------*/}
                                     <Link to={`/cotizar/${user.id}`} >
@@ -205,7 +205,7 @@ const Cotizar = () => {
                                     
                                     <Button variant="primary">Cotizar </Button>{''}
                                     </Link>
-                                    
+                                    </td>
                                    {/*<Accordion defaultActiveKey="0">
                   
                                         <ContextAwareToggle eventKey="0">Cotizar</ContextAwareToggle>

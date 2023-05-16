@@ -72,7 +72,7 @@ const patente="2";*/
             <Form id="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
                 {/* me fijo */}
                 {/* -----Sucursal------ */}
-                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextSucursal">
                     <Form.Label column sm="2">
                         Sucursal:
                     </Form.Label>
@@ -88,12 +88,25 @@ const patente="2";*/
                 </Form.Group> */}
 
                 {/* -----DNI del Cliente------ */}
-                <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextDNI">
                     <Form.Label column sm="2">
                         DNI del Cliente:
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />
+                        <Form.Control.Feedback type="invalid">
+                            Por favor, proporcione un DNI válido.
+                        </Form.Control.Feedback>
+                    </Col>
+                </Form.Group>
+
+                {/* -----Mail del Cliente------ */}
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                    <Form.Label column sm="2">
+                        Mail del Cliente:
+                    </Form.Label>
+                    <Col sm="10">
+                        <Form.Control type="mail" placeholder="Agregue el mail del cliente" required />
                         <Form.Control.Feedback type="invalid">
                             Por favor, proporcione un DNI válido.
                         </Form.Control.Feedback>
@@ -109,7 +122,7 @@ const patente="2";*/
                 </Form.Group>*/}
 
                 {/* -----Patente------ */}
-                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextPatente">
                     <Form.Label column sm="2">
                         Patente:
                     </Form.Label>
@@ -126,7 +139,7 @@ const patente="2";*/
             </Form.Group>*/}
 
                 {/* -----IdVendedor------ */}
-                <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextIdv">
                     <Form.Label column sm="2">
                         IdVendedor:
                     </Form.Label>
@@ -143,7 +156,7 @@ const patente="2";*/
         </Form.Group>*/}
 
                 {/* -----Garantía extendida------ */}
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="checkGarantia">
                     <Form.Check
                         label="Garantía extendida"
                     //feedback="You must agree before submitting."
