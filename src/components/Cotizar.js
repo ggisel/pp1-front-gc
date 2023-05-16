@@ -42,87 +42,128 @@ const Cotizar = () => {
 
     //función para traer los datos de la API
     const URL = 'https://jsonplaceholder.typicode.com/users'//sacar datos de un json
+    //para traer datos de localData en la tabla cotizar Vehiculos
     const localData = [
         {
-            "id": 1,
+            "id": "1",
             "patente": "ABC123",
             "sucursal": "Sucursal A",
+            "anio": 2020,
             "marca": "Toyota",
             "modelo": "Corolla",
+            "kilometraje": 5000,
+            "combustible": "Gasolina",
+            "importado": "no",
             "reserva": "si"
-        },
-        {
-            "id": 2,
+          },
+          {
+            "id": "2",
             "patente": "DEF456",
             "sucursal": "Sucursal B",
+            "anio": 2019,
             "marca": "Honda",
             "modelo": "Civic",
+            "kilometraje": 8000,
+            "combustible": "Gasolina",
+            "importado": "no",
             "reserva": "no"
-        },
-        {
-            "id": 3,
+          },
+          {
+            "id": "3",
             "patente": "GHI789",
             "sucursal": "Sucursal C",
+            "anio": 2021,
             "marca": "Ford",
             "modelo": "Mustang",
+            "kilometraje": 3000,
+            "combustible": "Gasolina",
+            "importado": "si",
             "reserva": "si"
           },
           {
-            "id": 4,
+            "id": "4",
             "patente": "JKL012",
             "sucursal": "Sucursal A",
+            "anio": 2022,
             "marca": "Chevrolet",
             "modelo": "Camaro",
+            "kilometraje": 2000,
+            "combustible": "Gasolina",
+            "importado": "no",
             "reserva": "no"
           },
           {
-            "id": 5,
+            "id": "5",
             "patente": "MNO345",
             "sucursal": "Sucursal B",
+            "anio": 2020,
             "marca": "Volkswagen",
             "modelo": "Golf",
+            "kilometraje": 7000,
+            "combustible": "Gasolina",
+            "importado": "no",
             "reserva": "si"
           },
           {
-            "id": 6,
+            "id": "6",
             "patente": "PQR678",
             "sucursal": "Sucursal C",
+            "anio": 2019,
             "marca": "Toyota",
             "modelo": "Rav4",
+            "kilometraje": 10000,
+            "combustible": "Híbrido",
+            "importado": "no",
             "reserva": "no"
           },
           {
-            "id": 7,
+            "id": "7",
             "patente": "STU901",
             "sucursal": "Sucursal A",
+            "anio": 2021,
             "marca": "Mazda",
             "modelo": "CX-5",
+            "kilometraje": 4000,
+            "combustible": "Gasolina",
+            "importado": "si",
             "reserva": "si"
           },
           {
-            "id": 8,
+            "id": "8",
             "patente": "VWX234",
             "sucursal": "Sucursal B",
+            "anio": 2022,
             "marca": "Nissan",
             "modelo": "Sentra",
+            "kilometraje": 3000,
+            "combustible": "Gasolina",
+            "importado": "no",
             "reserva": "no"
           },
           {
-            "id": 9,
+            "id": "9",
             "patente": "YZA567",
             "sucursal": "Sucursal C",
+            "anio": 2020,
             "marca": "Honda",
             "modelo": "Accord",
+            "kilometraje": 6000,
+            "combustible": "Gasolina",
+            "importado": "no",
             "reserva": "si"
-          },
-          {
-            "id": 10,
+            },
+            {
+            "id": "10",
             "patente": "BCD890",
             "sucursal": "Sucursal A",
+            "anio": 2021,
             "marca": "Ford",
             "modelo": "Explorer",
+            "kilometraje": 8000,
+            "combustible": "Gasolina",
+            "importado": "si",
             "reserva": "no"
-          }
+            }
     ]
 
     //datos que traemos
@@ -176,8 +217,11 @@ const Cotizar = () => {
                             <tr>
                                 <th>Patente</th>
                                 <th>Sucursal</th>
-                                <th>Marca</th>
+                                <th>Año</th>
                                 <th>Modelo</th>
+                                <th>Kilometraje</th>
+                                <th>Combustible</th>
+                                <th>Importado</th>
                                 <th>Vehículo reservado</th>
                                 <th>Cotizar</th>
                             </tr>
@@ -193,8 +237,11 @@ const Cotizar = () => {
                               <tr key={user.id}>
                                     <td>{user.patente}</td>
                                     <td>{user.sucursal}</td>
-                                    <td>{user.marca}</td>
+                                    <td>{user.anio}</td>
                                     <td>{user.modelo}</td>
+                                    <td>{user.kilometraje}</td>
+                                    <td>{user.combustible}</td>
+                                    <td>{user.importado}</td>
                                     <td>{user.reserva}</td>
                                     
                                     <td>

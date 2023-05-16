@@ -56,7 +56,7 @@ const Boleta = (props) => {
   return (
     <>
       <div id="boleta" className="">
-      <Container className="my-5">
+      <Container className="my-0">
       <h1>Boleta de Cotización</h1>
       <Row className="my-4">
         <Col xs={6}>
@@ -99,7 +99,7 @@ const Boleta = (props) => {
           </tr>
         </tbody>
       </Table>
-      <Button type="text">Imprimir</Button>
+      <Button type="text">Mandar por mail</Button>
     </Container>
     
     </div>

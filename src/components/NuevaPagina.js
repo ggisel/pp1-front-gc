@@ -163,9 +163,11 @@ const patente="2";*/
                     // feedbackType="invalid"
                     />
                 </Form.Group>
+
+                {/* -----Asi me pide validar------ */}
                 {/*<Button type="submit">Finalizar</Button>*/}
 
-                
+                {/* -----Asi no me valida------ */}
                 <Link to="/boleta-cotizacion">
                 <Button type="submit">Finalizar</Button>
                 </Link>
