@@ -212,7 +212,7 @@ const Cotizar = () => {
 
                 {/* tabla */}
                 <div>
-                    <Table striped bordered hover>
+                    <Table striped bordered hover responsive="xl" size="sm">
                         <thead>
                             <tr>
                                 <th>Patente</th>
