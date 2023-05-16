@@ -199,7 +199,8 @@ const Cotizar = () => {
 
                             
                                      {/*---------- Agrego consegui patente  -------*/}
-                                    <Link to={{pathname:"/nueva-pagina",state: { patente: "2"} }} >
+                                     {/*---------- interpolacion de varieables  -------*/}
+                                    <Link to={`/cotizar/${user.id}`} >
                                     {/*-------- ---------------*/}
                                     
                                     <Button variant="primary">Cotizar </Button>{''}

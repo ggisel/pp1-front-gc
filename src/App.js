@@ -34,7 +34,7 @@ function App() {
             <Route path='*' element={<Navigate replace to="/" />} />
 
             {/*boton de cotizar */}
-            <Route path='nueva-pagina' element={<NuevaPagina />} />
+            <Route path='cotizar/:productId' element={<NuevaPagina />} />
 
             {/*boton de finalizar */}
             <Route path='boleta-cotizacion' element={<Boleta />} />

@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { Link,useLocation } from 'react-router-dom';
-
+import { Link,useLocation, useParams } from 'react-router-dom';
+import {products} from './products';
 /*
 cuanto presion el boton cotizar pongo un input donde tiene que rellenar esto datos 
 *Sucursal : String ---> (se obtiene del auto logrado)
@@ -21,14 +21,21 @@ y la garantia extendida del check que tenemos que hacer
 
 */
 
-const NuevaPagina = ({props}) => {
+const NuevaPagina = () => {
     const patente = "ABC123";
     const sucursal = " lejos";
     const marca = "way";
     const modelo = "Sincere";
     const  idVendedor="Id del Vendedor";
 
+    /*lo llamo de la misma manera que en app.js osea productId y lo desectructuramos*/
+    /*consumo desde los parametro las variantes del objeto y lo desestructuro el objeto */
+    let {productId}= useParams();
+    /*dentro de mi erreglo de productos busco 
+    el producto que en su propiedad id sea igual al productId que viene de los params
+    en este caso product.id tiraba error, entonces TIENE que ser string ya que productId es string*/
 
+    let productSelected= products.find(product => product.id === productId)
     /*agrego 9-05 
     const location = useLocation();
   const patente = location.state.patente;
@@ -107,7 +114,7 @@ const patente="2";*/
                         Patente:
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control plaintext readOnly defaultValue={patente} />
+                        <Form.Control plaintext readOnly defaultValue={productSelected.patente} />
                     </Col>
                 </Form.Group>
                 {/*    <Form.Group as={Row} md="6" controlId="validationCustom04">
