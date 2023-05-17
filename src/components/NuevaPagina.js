@@ -1,9 +1,6 @@
 import React, { useState, useContext } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import { Link,useLocation, useParams } from 'react-router-dom';
+import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Link,useNavigate, useParams } from 'react-router-dom';
 import {products} from './products';
 
 
@@ -34,7 +31,7 @@ const NuevaPagina = () => {
     const { updateDni, updateEmail,updatePatente } = useContext(AppContext);
   const [dni, setDni] = useState('');
   const [email, setEmail] = useState('');
-
+const navigate = useNavigate();
 
     /*lo llamo de la misma manera que en app.js osea productId y lo desectructuramos*/
     /*consumo desde los parametro las variantes del objeto y lo desestructuro el objeto */
@@ -69,21 +66,25 @@ const patente="2";*/
     updatePatente(productSelected.patente);*/
 
     const handleSubmit = (event) => {
-        event.preventDefault();// para ue¿¿que no se actualice la pantalla al hacer clic
+        event.preventDefault();// para que no se actualice la pantalla al hacer clic
 
-        // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
-        /*agrego- 16-05 */
-    updateDni(dni);
-    updateEmail(email);
-    updatePatente(productSelected.patente);
-
+        /*primero valida formulario */
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-            event.preventDefault();
             event.stopPropagation();
         }
+        else{
+            setValidated(true);
 
-        setValidated(true);
+            // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+            /*agrego- 16-05 */
+        updateDni(dni);
+        updateEmail(email);
+        updatePatente(productSelected.patente);
+    /*no hace fata darle clic,x eso uso navigate() */
+    navigate("/boleta-cotizacion");
+
+        }   
     };
 
     return (
@@ -143,7 +144,7 @@ const patente="2";*/
 
 
                         <Form.Control.Feedback type="invalid">
-                            Por favor, proporcione un DNI válido.
+                            Por favor, proporcione un Email válido.
                         </Form.Control.Feedback>
                     </Col>
                 </Form.Group>
@@ -200,12 +201,12 @@ const patente="2";*/
                 </Form.Group>
 
                 {/* -----Asi me pide validar------ */}
-                {/*<Button type="submit">Finalizar</Button>*/}
+                <Button type="submit">Finalizar</Button>
 
-                {/* -----Asi no me valida- 16-05------ */}
+                {/* -----Asi no me valida- 16-05------ 
                 <Link to="/boleta-cotizacion">
                 <Button type="submit" >Finalizar</Button>
-                </Link>
+                </Link>*/}
                 
             </Form>
         </div>
