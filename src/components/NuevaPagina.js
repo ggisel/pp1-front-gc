@@ -22,10 +22,7 @@ y la garantia extendida del check que tenemos que hacer
 */
 
 const NuevaPagina = () => {
-    const patente = "ABC123";
-    const sucursal = " lejos";
-    const marca = "way";
-    const modelo = "Sincere";
+
     const  idVendedor="Id del Vendedor";
 
     const { updateDni, updateEmail,updatePatente } = useContext(AppContext);
@@ -41,42 +38,25 @@ const navigate = useNavigate();
     en este caso product.id tiraba error, entonces TIENE que ser string ya que productId es string*/
 
     let productSelected= products.find(product => product.id === productId)
-    /*agrego 9-05 
-    const location = useLocation();
-  const patente = location.state.patente;
-  console.log(props);
-    /*------ Agrego esto ------------*//*
-    const [patente, setPatente] = useState(props);
 
-    // Actualizamos el estado con la patente recibida a través de las props
-    useEffect(() => {
-      setPatente(props.patente);
-    }, [props.patente]);
-    /*--------------------------------- */
-
-/*//anda el pasar datos
-const patente="2";*/
     const [validated, setValidated] = useState(false);
-
-    /*agrego- 16-05 tiene que estar adentro del handleSubmit, no anda por el Link
-            aca afuera tira error*/
-    // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
-   /* updateDni(dni);
-    updateEmail(email);
-    updatePatente(productSelected.patente);*/
-
+  
     const handleSubmit = (event) => {
         event.preventDefault();// para que no se actualice la pantalla al hacer clic
 
         /*primero valida formulario */
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
+            event.preventDefault();
             event.stopPropagation();
+            setValidated(true);
         }
         else{
-            setValidated(true);
+            
 
-            // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+            /* Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+            tiene que estar adentro del handleSubmit, no anda por el Link
+            aca afuera tira error*/
             /*agrego- 16-05 */
         updateDni(dni);
         updateEmail(email);
@@ -91,7 +71,6 @@ const patente="2";*/
 
         <div >
             <h1 id="titulo-formulario">Cotización</h1>
-
 
             <Form id="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
                 {/* me fijo */}
@@ -120,7 +99,8 @@ const patente="2";*/
                         {/*<Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />*/}
                         
                         {/*agrego- 16-05 */}
-                        <Form.Control type="text" placeholder="Agregue el DNI sin puntos" value={dni} onChange={(event) => setDni(event.target.value)} required />
+                        <Form.Control type="text" placeholder="Agregue el DNI sin puntos" value={dni} 
+                        onChange={(event) => setDni(event.target.value)} required/>  {/*Agrega la propiedad isValid*/}
                        
                        
                        
@@ -140,7 +120,7 @@ const patente="2";*/
                         
                         {/*agrego- 16-05 */}
                         <Form.Control type="mail" placeholder="Agregue el mail del cliente" value={email}
-            onChange={(event) => setEmail(event.target.value)} required />
+            onChange={(event) => setEmail(event.target.value)} required/>
 
 
                         <Form.Control.Feedback type="invalid">
