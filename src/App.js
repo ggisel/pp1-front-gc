@@ -9,8 +9,8 @@ import NuevaPagina from './components/NuevaPagina';
 import Boleta from './components/Boleta';
 import Footer from './components/Footer';
 
-/*----- Agrego conseguir patente--------*/
-import { useState } from 'react'; // importar useState
+/*----- Agrego conseguir dni y mail--------*/
+import { AppProvider } from './components/AppContext';
 
 /*function handleAutoElegido(patente) {
   setPatenteSeleccionada(patente.patente);
@@ -19,13 +19,11 @@ import { useState } from 'react'; // importar useState
 
 
 function App() {
-  const [patenteSeleccionada, setPatenteSeleccionada] = useState(''); // definir la variable
-
-  
   return (
     <div className="App">
 
       <BrowserRouter>
+      <AppProvider>
         <Routes>
           <Route path='/' element={<Header />}>
             <Route index element={<Inicio />} />
@@ -37,12 +35,13 @@ function App() {
             <Route path='cotizar/:productId' element={<NuevaPagina />} />
 
             {/*boton de finalizar */}
-            <Route path='boleta-cotizacion' element={<Boleta />} />
+            <Route path='/boleta-cotizacion' element={<Boleta />} />
 
             <Route path='/' element={<Footer />} />
           </Route>
 
         </Routes>
+        </AppProvider>
       </BrowserRouter>
 
     </div>

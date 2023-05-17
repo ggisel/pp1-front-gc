@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { Link,useLocation, useParams } from 'react-router-dom';
 import {products} from './products';
+
+
+import { AppContext } from './AppContext';
 /*
 cuanto presion el boton cotizar pongo un input donde tiene que rellenar esto datos 
 *Sucursal : String ---> (se obtiene del auto logrado)
@@ -27,6 +30,11 @@ const NuevaPagina = () => {
     const marca = "way";
     const modelo = "Sincere";
     const  idVendedor="Id del Vendedor";
+
+    const { updateDni, updateEmail,updatePatente } = useContext(AppContext);
+  const [dni, setDni] = useState('');
+  const [email, setEmail] = useState('');
+
 
     /*lo llamo de la misma manera que en app.js osea productId y lo desectructuramos*/
     /*consumo desde los parametro las variantes del objeto y lo desestructuro el objeto */
@@ -53,7 +61,23 @@ const NuevaPagina = () => {
 const patente="2";*/
     const [validated, setValidated] = useState(false);
 
+    /*agrego- 16-05 */
+    console.log('DNI:', dni);//obtiene valor de id
+    console.log('Email:', email);
+    // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+        /*agrego- 16-05 */
+    updateDni(dni);
+    updateEmail(email);
+    updatePatente(productSelected.patente)
+
     const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+        /*agrego- 16-05 
+    updateDni(dni);
+    updateEmail(email);*/
+
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -93,7 +117,13 @@ const patente="2";*/
                         DNI del Cliente:
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />
+                        {/*<Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />*/}
+                        
+                        {/*agrego- 16-05 */}
+                        <Form.Control type="text" placeholder="Agregue el DNI sin puntos" value={dni} onChange={(event) => setDni(event.target.value)} required />
+                       
+                       
+                       
                         <Form.Control.Feedback type="invalid">
                             Por favor, proporcione un DNI válido.
                         </Form.Control.Feedback>
@@ -106,7 +136,13 @@ const patente="2";*/
                         Mail del Cliente:
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="mail" placeholder="Agregue el mail del cliente" required />
+                        {/*<Form.Control type="mail" placeholder="Agregue el mail del cliente" required />*/}
+                        
+                        {/*agrego- 16-05 */}
+                        <Form.Control type="mail" placeholder="Agregue el mail del cliente" value={email}
+            onChange={(event) => setEmail(event.target.value)} required />
+
+
                         <Form.Control.Feedback type="invalid">
                             Por favor, proporcione un DNI válido.
                         </Form.Control.Feedback>
@@ -167,8 +203,9 @@ const patente="2";*/
                 {/* -----Asi me pide validar------ */}
                 {/*<Button type="submit">Finalizar</Button>*/}
 
-                {/* -----Asi no me valida------ */}
+                {/* -----Asi no me valida- 16-05------ */}
                 <Link to="/boleta-cotizacion">
+                {/*<Link to={`/boleta-cotizacion?dni=${encodeURIComponent(dni)}&email=${encodeURIComponent(email)}`}>*/}
                 <Button type="submit">Finalizar</Button>
                 </Link>
                 

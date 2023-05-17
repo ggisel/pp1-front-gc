@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import { useParams } from 'react-router-dom';
 
+
+import { AppContext } from './AppContext';
 /*y despues le devuelve esta boleta por asi decirlos con todos estos datos  
       Long id; 
       String sucursal; 
@@ -36,11 +39,15 @@ const Boleta = (props) => {
     total
   } = props;*/
   /*  Borrar */
+  const { dni, email, patente } = useContext(AppContext);
+    
+    
+  console.log(dni);
+  console.log({email});
+
   const sucursal="Surcusal del vendedor";
     const  numeroCotizacion="890";
     const  idVendedor="123";
-    const patente="ABC123";
-    const dniCliente="12345678";
     const fecha="9-05";
   
 
@@ -67,7 +74,7 @@ const Boleta = (props) => {
         <Col xs={6}>
           <h4>ID: <span id="resultado">{id}</span></h4>
           <h4>Patente: <span id="resultado">{patente}</span></h4>
-          <h4>DNI del cliente: <span id="resultado">{dniCliente}</span></h4>
+          <h4>DNI del cliente: <span id="resultado">{dni}</span></h4>
         </Col>
       </Row>
       <Row className="my-4">
