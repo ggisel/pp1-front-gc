@@ -40,10 +40,9 @@ const Boleta = (props) => {
   } = props;*/
   /*  Borrar */
   const { dni, email, patente } = useContext(AppContext);
-    
-    
-  console.log(dni);
-  console.log({email});
+      
+  /*console.log(dni);
+  console.log({email});*/
 
   const sucursal="Surcusal del vendedor";
     const  numeroCotizacion="890";

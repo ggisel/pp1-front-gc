@@ -61,22 +61,21 @@ const NuevaPagina = () => {
 const patente="2";*/
     const [validated, setValidated] = useState(false);
 
-    /*agrego- 16-05 */
-    console.log('DNI:', dni);//obtiene valor de id
-    console.log('Email:', email);
+    /*agrego- 16-05 tiene que estar adentro del handleSubmit, no anda por el Link
+            aca afuera tira error*/
     // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+   /* updateDni(dni);
+    updateEmail(email);
+    updatePatente(productSelected.patente);*/
+
+    const handleSubmit = (event) => {
+        event.preventDefault();// para ue¿¿que no se actualice la pantalla al hacer clic
+
+        // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
         /*agrego- 16-05 */
     updateDni(dni);
     updateEmail(email);
-    updatePatente(productSelected.patente)
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        // Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
-        /*agrego- 16-05 
-    updateDni(dni);
-    updateEmail(email);*/
+    updatePatente(productSelected.patente);
 
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -205,8 +204,7 @@ const patente="2";*/
 
                 {/* -----Asi no me valida- 16-05------ */}
                 <Link to="/boleta-cotizacion">
-                {/*<Link to={`/boleta-cotizacion?dni=${encodeURIComponent(dni)}&email=${encodeURIComponent(email)}`}>*/}
-                <Button type="submit">Finalizar</Button>
+                <Button type="submit" >Finalizar</Button>
                 </Link>
                 
             </Form>
