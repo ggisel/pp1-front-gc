@@ -10,7 +10,6 @@ import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import Card from 'react-bootstrap/Card';
 import { AccordionContext } from 'react-bootstrap';
 
-
 /*----Agregue esto---- */
 function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);//(AccordionContext);
@@ -29,11 +28,10 @@ function ContextAwareToggle({ children, eventKey, callback }) {
             onClick={decoratedOnClick}
         >
             {children}
-            </Button>
+        </Button>
     );
 }
 /*---------------- */
-
 
 const Cotizar = () => {
     //setear los hooks useState
@@ -55,8 +53,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "no",
             "reserva": "si"
-          },
-          {
+        },
+        {
             "id": "2",
             "patente": "DEF456",
             "sucursal": "Sucursal B",
@@ -67,8 +65,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "no",
             "reserva": "no"
-          },
-          {
+        },
+        {
             "id": "3",
             "patente": "GHI789",
             "sucursal": "Sucursal C",
@@ -79,8 +77,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "si",
             "reserva": "si"
-          },
-          {
+        },
+        {
             "id": "4",
             "patente": "JKL012",
             "sucursal": "Sucursal A",
@@ -91,8 +89,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "no",
             "reserva": "no"
-          },
-          {
+        },
+        {
             "id": "5",
             "patente": "MNO345",
             "sucursal": "Sucursal B",
@@ -103,8 +101,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "no",
             "reserva": "si"
-          },
-          {
+        },
+        {
             "id": "6",
             "patente": "PQR678",
             "sucursal": "Sucursal C",
@@ -115,8 +113,8 @@ const Cotizar = () => {
             "combustible": "Híbrido",
             "importado": "no",
             "reserva": "no"
-          },
-          {
+        },
+        {
             "id": "7",
             "patente": "STU901",
             "sucursal": "Sucursal A",
@@ -127,8 +125,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "si",
             "reserva": "si"
-          },
-          {
+        },
+        {
             "id": "8",
             "patente": "VWX234",
             "sucursal": "Sucursal B",
@@ -139,8 +137,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "no",
             "reserva": "no"
-          },
-          {
+        },
+        {
             "id": "9",
             "patente": "YZA567",
             "sucursal": "Sucursal C",
@@ -151,8 +149,8 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "no",
             "reserva": "si"
-            },
-            {
+        },
+        {
             "id": "10",
             "patente": "BCD890",
             "sucursal": "Sucursal A",
@@ -163,19 +161,19 @@ const Cotizar = () => {
             "combustible": "Nafta",
             "importado": "si",
             "reserva": "no"
-            },
-            {
-              "id": 21,
-              "patente": "XYZ987",
-              "sucursal": "Sucursal B",
-              "marca": "Volkswagen",
-              "anio": 2021,
-              "modelo": "Tiguan",
-              "kilometraje": 5000,
-              "combustible": "Diésel",
-              "importado": "no",
-              "reserva": "si"
-            }
+        },
+        {
+            "id": 21,
+            "patente": "XYZ987",
+            "sucursal": "Sucursal B",
+            "marca": "Volkswagen",
+            "anio": 2021,
+            "modelo": "Tiguan",
+            "kilometraje": 5000,
+            "combustible": "Diésel",
+            "importado": "no",
+            "reserva": "si"
+        }
     ]
 
     //datos que traemos
@@ -218,7 +216,7 @@ const Cotizar = () => {
     //renderizamos la vista
     return (
         <>
-        <h1 id="titulo-formulario">Cotizar Vehículos</h1>
+            <h1 id="titulo-formulario">Cotizar Vehículos</h1>
             {/* filtro */}
             <div><input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control' />
 
@@ -247,7 +245,7 @@ const Cotizar = () => {
                     </tr>                    
                 ))}*/}
                             {results.map((user) => (
-                              <tr key={user.id}>
+                                <tr key={user.id}>
                                     <td>{user.patente}</td>
                                     <td>{user.sucursal}</td>
                                     <td>{user.anio}</td>
@@ -257,17 +255,17 @@ const Cotizar = () => {
                                     <td>{user.combustible}</td>
                                     <td>{user.importado}</td>
                                     <td>{user.reserva}</td>
-                                    
+
                                     <td>
-                                     {/*---------- Agrego consegui patente  -------*/}
-                                     {/*---------- interpolacion de varieables  -------*/}
-                                    <Link to={`/cotizar/${user.id}`} >
-                                    {/*-------- ---------------*/}
-                                    
-                                    <Button variant="primary">Cotizar </Button>{''}
-                                    </Link>
+                                        {/*---------- Agrego consegui patente  -------*/}
+                                        {/*---------- interpolacion de varieables  -------*/}
+                                        <Link to={`/cotizar/${user.id}`} >
+                                            {/*-------- ---------------*/}
+
+                                            <Button variant="primary">Cotizar </Button>{''}
+                                        </Link>
                                     </td>
-                                   {/*<Accordion defaultActiveKey="0">
+                                    {/*<Accordion defaultActiveKey="0">
                   
                                         <ContextAwareToggle eventKey="0">Cotizar</ContextAwareToggle>
                                     
@@ -275,7 +273,7 @@ const Cotizar = () => {
                                         <td colSpan={2}>Hello! I'm the body</td>
                                         </Accordion.Collapse>
                                     </Accordion>*/}
-                            </tr>
+                                </tr>
                             ))}
 
                             {/* paga tener 2 datos en uno
@@ -290,7 +288,6 @@ const Cotizar = () => {
                     </Table>
                 </div>
             </div>
-           {/*<NuevaPagina patente="2"/>*/} 
         </>
     )
 }

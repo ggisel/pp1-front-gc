@@ -12,35 +12,29 @@ import Footer from './components/Footer';
 /*----- Agrego conseguir dni y mail--------*/
 import { AppProvider } from './components/AppContext';
 
-/*function handleAutoElegido(patente) {
-  setPatenteSeleccionada(patente.patente);
-}
-/*---------------*/
-
-
 function App() {
   return (
     <div className="App">
 
       <BrowserRouter>
-      <AppProvider>
-        <Routes>
-          <Route path='/' element={<Header />}>
-            <Route index element={<Inicio />} />
-            <Route path='cotizar' element={<Cotizar />} />
+        <AppProvider>
+          <Routes>
+            <Route path='/' element={<Header />}>
+              <Route index element={<Inicio />} />
+              <Route path='cotizar' element={<Cotizar />} />
 
-            <Route path='*' element={<Navigate replace to="/" />} />
+              <Route path='*' element={<Navigate replace to="/" />} />
 
-            {/*boton de cotizar */}
-            <Route path='cotizar/:productId' element={<NuevaPagina />} />
+              {/*boton de cotizar */}
+              <Route path='cotizar/:productId' element={<NuevaPagina />} />
 
-            {/*boton de finalizar */}
-            <Route path='/boleta-cotizacion' element={<Boleta />} />
+              {/*boton de finalizar */}
+              <Route path='/boleta-cotizacion' element={<Boleta />} />
 
-            <Route path='/' element={<Footer />} />
-          </Route>
+              <Route path='/' element={<Footer />} />
+            </Route>
 
-        </Routes>
+          </Routes>
         </AppProvider>
       </BrowserRouter>
 
