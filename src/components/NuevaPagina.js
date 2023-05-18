@@ -107,9 +107,8 @@ const NuevaPagina = () => {
                     <Col sm="10">
 
                         {/*agrego- 16-05 */}
-                        <Form.Control type="mail" placeholder="Agregue el mail del cliente" value={email}
+                        <Form.Control type="email" placeholder="Agregue el mail del cliente" value={email}
                             onChange={(event) => setEmail(event.target.value)} required />
-
 
                         <Form.Control.Feedback type="invalid">
                             Por favor, proporcione un Email válido.
