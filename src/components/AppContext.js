@@ -5,13 +5,13 @@ export const AppContext = createContext();
 
 // Crea el proveedor del estado global
 export const AppProvider = ({ children }) => {
-  const [dni, setDni] = useState('');
+  const [nombreC, setNombreC] = useState('');
   const [email, setEmail] = useState('');
   const [patente, setPatente] = useState('');
 
   // Define las funciones para actualizar el estado global
-  const updateDni = (newDni) => {
-    setDni(newDni);
+  const updateNombreC = (newNombreC) => {
+    setNombreC(newNombreC);
   };
 
   const updateEmail = (newEmail) => {
@@ -24,10 +24,10 @@ export const AppProvider = ({ children }) => {
 
   // Define el valor del contexto
   const contextValue = {
-    dni,
+    nombreC,
     email,
     patente,
-    updateDni,
+    updateNombreC,
     updateEmail,
     updatePatente,
   };

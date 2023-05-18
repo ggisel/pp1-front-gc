@@ -6,13 +6,13 @@ import { AppContext } from './AppContext';
 /*
 cuanto presion el boton cotizar pongo un input donde tiene que rellenar esto datos 
 *Sucursal : String ---> (se obtiene del auto logrado)
-* DniCliente : String --> (esto identifiqué que se tiene que pedir, porque como vimos, un auto puede estar 
+* NombreCliente : String --> (esto identifiqué que se tiene que pedir, porque como vimos, un auto puede estar 
     reservado pero otra persona puede ir físicamente y comprarlo)
 * Patente : String --> auto
 * IdVendedor : String --> usuario logeado
 * Garantía extendida : boleean --> con un check
 
-de aca la sucursal la saca del auto que filtro en la tabla. el dni ese que le pedimos obligatorio, la 
+de aca la sucursal la saca del auto que filtro en la tabla. el nombre del cliente ese que le pedimos obligatorio, la 
 patente del auto que se filtro, el id del vendedor lo consultamos por la sesion que tiene iniciada el usuario, 
 y la garantia extendida del check que tenemos que hacer
 */
@@ -21,8 +21,8 @@ const NuevaPagina = () => {
 
     const idVendedor = "Id del Vendedor";
 
-    const { updateDni, updateEmail, updatePatente } = useContext(AppContext);
-    const [dni, setDni] = useState('');
+    const { updateNombreC, updateEmail, updatePatente } = useContext(AppContext);
+    const [nombreC, setNombreC] = useState('');
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
 
@@ -48,11 +48,11 @@ const NuevaPagina = () => {
             setValidated(true);
         }
         else {
-            /* Aquí puedes utilizar los valores de dni y email para realizar las acciones que necesites
+            /* Aquí puedes utilizar los valores de nombreC y email para realizar las acciones que necesites
             tiene que estar adentro del handleSubmit, no anda por el Link
             aca afuera tira error*/
             /*agrego- 16-05 */
-            updateDni(dni);
+            updateNombreC(nombreC);
             updateEmail(email);
             updatePatente(productSelected.patente);
             /*no hace fata darle clic,x eso uso navigate() */
@@ -81,20 +81,20 @@ const NuevaPagina = () => {
                     </div>
                 </Form.Group> */}
 
-                {/* -----DNI del Cliente------ */}
-                <Form.Group as={Row} className="mb-3" controlId="formPlaintextDNI">
+                {/* -----Nombre del Cliente------ */}
+                <Form.Group as={Row} className="mb-3" controlId="formPlaintextNombreC">
                     <Form.Label column sm="2">
-                        DNI del Cliente:
+                        Nombre del Cliente:
                     </Form.Label>
                     <Col sm="10">
 
                         {/*agrego- 16-05 */}
-                        <Form.Control type="text" placeholder="Agregue el DNI sin puntos" value={dni}
-                            onChange={(event) => setDni(event.target.value)} required />
+                        <Form.Control type="text" placeholder="Agregue el Nombre del Cliente" value={nombreC}
+                            onChange={(event) => setNombreC(event.target.value)} required />
 
 
                         <Form.Control.Feedback type="invalid">
-                            Por favor, proporcione un DNI válido.
+                            Por favor, proporcione un Nombre del Cliente válido.
                         </Form.Control.Feedback>
                     </Col>
                 </Form.Group>
@@ -118,10 +118,10 @@ const NuevaPagina = () => {
                 </Form.Group>
 
                 {/*<Form.Group as={Row} md="6" controlId="validationCustom03">
-                    <Form.Label column sm={2}>DNI del Cliente</Form.Label>
-                    <Form.Control type="text" placeholder="Agregue el DNI sin puntos" required />
+                    <Form.Label column sm={2}>Nombre del Cliente</Form.Label>
+                    <Form.Control type="text" placeholder="Agregue el Nombre del Cliente" required />
                     <Form.Control.Feedback type="invalid">
-                        Por favor, proporcione un DNI válido.
+                        Por favor, proporcione un Nombre del Cliente válido.
                     </Form.Control.Feedback>
                 </Form.Group>*/}
 

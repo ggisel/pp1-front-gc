@@ -8,7 +8,7 @@ import { AppContext } from './AppContext';
       Long numeroCotizacion; 
       Integer idVendedor; 
       String patente; 
-      String dniCliente; 
+      String nombreC; 
       pattern = "dd-MM-yyyy"
       Timestamp fecha; 
       Double precioBase; 
@@ -25,7 +25,7 @@ const Boleta = (props) => {
     numeroCotizacion,
     idVendedor,
     patente,
-    dniCliente,
+    nombreC,
     fecha,
     precioBase,
     precioTraslado,
@@ -36,7 +36,7 @@ const Boleta = (props) => {
     total
   } = props;*/
 
-  const { dni, email, patente } = useContext(AppContext);
+  const { nombreC, email, patente } = useContext(AppContext);
 
   const sucursal = "Surcusal del vendedor";
   const numeroCotizacion = "890";
@@ -65,7 +65,7 @@ const Boleta = (props) => {
             <Col xs={6}>
               <h4>ID: <span id="resultado">{id}</span></h4>
               <h4>Patente: <span id="resultado">{patente}</span></h4>
-              <h4>DNI del cliente: <span id="resultado">{dni}</span></h4>
+              <h4>Nombre del cliente: <span id="resultado">{nombreC}</span></h4>
             </Col>
           </Row>
           <Row className="my-4">
