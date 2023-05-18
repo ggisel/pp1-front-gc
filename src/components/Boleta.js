@@ -54,6 +54,7 @@ const Boleta = (props) => {
   return (
     <>
       <div id="boleta" className="">
+        
         <Container className="my-0">
           <h1>Boleta de Cotización</h1>
           <Row className="my-4">

@@ -158,7 +158,7 @@ const NuevaPagina = () => {
                 {/* -----Asi me pide validar------ */}
                 <Button type="submit">Finalizar</Button>
 
-                {/* -----Asi no me valida- 16-05------ 
+                {/* ----- Asi no me valida ------ 
                 <Link to="/boleta-cotizacion">
                 <Button type="submit" >Finalizar</Button>
                 </Link>*/}
