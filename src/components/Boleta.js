@@ -36,21 +36,19 @@ const Boleta = (props) => {
     total
   } = props;*/
 
-  const { nombreC, email, patente } = useContext(AppContext);
+  const { nombreC, email, patente, garantiaExtendida } = useContext(AppContext);
   /* declara una variable de estado para almacenar la fecha actual */
   const [fechaActual, setFechaActual] = useState(new Date());
 
   const sucursal = "Surcusal del vendedor";
   const numeroCotizacion = "890";
   const idVendedor = "123";
-  //const fecha = {fechaActual.toLocaleDateString()};
   const id = "60";
   const precioBase = "";
   const precioTraslado = "";
   const importeIVA = "";
   const gastosAdministrativos = "";
   const gastosGarantia = "";
-  const garantiaExtendida = "";
   const total = "total";
 
   return (
@@ -95,7 +93,7 @@ const Boleta = (props) => {
                 <td>{importeIVA}</td>
                 <td>{gastosAdministrativos}</td>
                 <td>{gastosGarantia}</td>
-                <td>{garantiaExtendida ? 'Sí' : 'No'}</td>
+                <td>{garantiaExtendida ? 'Sí' : 'No'}{garantiaExtendida}</td>
                 <td>{total}</td>
               </tr>
             </tbody>

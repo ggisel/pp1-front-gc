@@ -21,9 +21,11 @@ const NuevaPagina = () => {
 
     const idVendedor = "Id del Vendedor";
 
-    const { updateNombreC, updateEmail, updatePatente } = useContext(AppContext);
+    const { updateNombreC, updateEmail, updatePatente, updateGarantiaExtendida} = useContext(AppContext);
     const [nombreC, setNombreC] = useState('');
     const [email, setEmail] = useState('');
+    const [garantiaExtendida, setGarantiaExtendida] = useState(false);
+
     const navigate = useNavigate();
 
     /*lo llamo de la misma manera que en app.js osea productId y lo desectructuramos*/
@@ -55,6 +57,7 @@ const NuevaPagina = () => {
             updateNombreC(nombreC);
             updateEmail(email);
             updatePatente(productSelected.patente);
+            updateGarantiaExtendida(garantiaExtendida);
             /*no hace fata darle clic,x eso uso navigate() */
             navigate("/boleta-cotizacion");
         }
@@ -149,6 +152,8 @@ const NuevaPagina = () => {
                 <Form.Group className="mb-3" controlId="checkGarantia">
                     <Form.Check
                         label="Garantía extendida"
+                        checked={garantiaExtendida}
+                        onChange={(event) => setGarantiaExtendida(event.target.checked)}
                     //feedback="You must agree before submitting."
                     // feedbackType="invalid"
                     />

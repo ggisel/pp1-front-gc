@@ -8,6 +8,7 @@ export const AppProvider = ({ children }) => {
   const [nombreC, setNombreC] = useState('');
   const [email, setEmail] = useState('');
   const [patente, setPatente] = useState('');
+  const [garantiaExtendida, setGarantiaExtendida] = useState(false);
 
   // Define las funciones para actualizar el estado global
   const updateNombreC = (newNombreC) => {
@@ -21,15 +22,20 @@ export const AppProvider = ({ children }) => {
   const updatePatente = (newPatente) => {
     setPatente(newPatente);
   };
+  const updateGarantiaExtendida = (newGarantia) => {
+    setGarantiaExtendida(newGarantia);
+  };
 
   // Define el valor del contexto
   const contextValue = {
     nombreC,
     email,
     patente,
+    garantiaExtendida,
     updateNombreC,
     updateEmail,
     updatePatente,
+    updateGarantiaExtendida,
   };
 
   // Retorna el proveedor envolviendo los componentes hijos
