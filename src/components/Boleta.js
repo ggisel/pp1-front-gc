@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { AppContext } from './AppContext';
@@ -37,11 +37,13 @@ const Boleta = (props) => {
   } = props;*/
 
   const { nombreC, email, patente } = useContext(AppContext);
+  /* declara una variable de estado para almacenar la fecha actual */
+  const [fechaActual, setFechaActual] = useState(new Date());
 
   const sucursal = "Surcusal del vendedor";
   const numeroCotizacion = "890";
   const idVendedor = "123";
-  const fecha = "9-05";
+  //const fecha = {fechaActual.toLocaleDateString()};
   const id = "60";
   const precioBase = "";
   const precioTraslado = "";
@@ -71,7 +73,7 @@ const Boleta = (props) => {
           </Row>
           <Row className="my-4">
             <Col xs={6}>
-              <h4>Fecha: <span id="resultado">{fecha}</span></h4>
+              <h4>Fecha: <span id="resultado">{fechaActual.toLocaleDateString()}</span></h4>
             </Col>
           </Row>
           <Table striped bordered hover responsive>
