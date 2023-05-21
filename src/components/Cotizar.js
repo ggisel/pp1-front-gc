@@ -237,6 +237,23 @@ const Cotizar = () => {
                                 <th>Cotizar</th>
                             </tr>
                         </thead>
+
+
+{/*Prueba*/}
+<thead>
+    <tr>
+        <th></th>
+        <th></th>
+        <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por año' className='form-control' /></th>
+        <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por Marca' className='form-control' /></th>
+        <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por modelo' className='form-control' /></th>
+        <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por Kilometraje' className='form-control' /></th>
+        <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por Combustible' className='form-control' /></th>
+        <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por Importado' className='form-control' /></th>
+    </tr>
+</thead>
+
+
                         <tbody>
                             {/* { results.map( (user) => (
                     <tr key={user.id}>
