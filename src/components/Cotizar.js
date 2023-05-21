@@ -200,7 +200,24 @@ const Cotizar = () => {
 
     //metodo de filtrado 2   -recomendado- filtra por modelo o marca
     // const results = !search ? users : users.filter((dato)=> dato.name.toLowerCase().includes(search.toLocaleLowerCase()))
+
+   /* sirve solo que hago prueba
     const results = !search ? users : users.filter((dato) => dato.modelo.toLowerCase().includes(search.toLocaleLowerCase()) || dato.marca.toLowerCase().includes(search.toLocaleLowerCase()))
+*/
+
+/* prueba 21-05*/
+/*const resultsModelo = !search ? users : users.filter((dato) => dato.modelo.toLowerCase().includes(search.toLocaleLowerCase()));
+const resultsMarca = !search ? users : users.filter((dato) => dato.marca.toLowerCase().includes(search.toLocaleLowerCase()));
+const resultsKilometraje = !search ? users : users.filter((dato) => dato.kilometraje.toLowerCase().includes(search.toLocaleLowerCase()));
+const resultsCombustible = !search ? users : users.filter((dato) => dato.combustible.toLowerCase().includes(search.toLocaleLowerCase()));
+const resultsImportado = !search ? users : users.filter((dato) => dato.importado.toLowerCase().includes(search.toLocaleLowerCase()));
+const resultsAnio = !search ? users : users.filter((dato) => dato.anio.toLowerCase().includes(search.toLocaleLowerCase()));*/
+
+const results = !search ? users : users.filter((dato) => dato.modelo.toLowerCase().includes(search.toLocaleLowerCase()));
+/*------------------------------ */
+
+
+
 
     //pruebo useEffect de abajo
     /*useEffect( ()=> {
@@ -239,7 +256,7 @@ const Cotizar = () => {
                         </thead>
 
 
-{/*Prueba*/}
+{/*Prueba 21-05*/}
 <thead>
     <tr>
         <th></th>
@@ -252,6 +269,7 @@ const Cotizar = () => {
         <th><input value={search} onChange={searcher} type="text" placeholder='Buscar por Importado' className='form-control' /></th>
     </tr>
 </thead>
+{/*------------------------*/}
 
 
                         <tbody>
