@@ -2,7 +2,8 @@ import React from 'react'
 import { autos } from './autos';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-
+import Card from 'react-bootstrap/Card';
+import { Row, Col} from 'react-bootstrap';
 
 const AutosVenta = () => {
   /*const results = users.filter((user) => {
@@ -12,25 +13,27 @@ const AutosVenta = () => {
     <>
       <h1 id="titulo-ventana-autos">Comprar Vehículos</h1>
       <div id="auto-cuadro">
-      {autos.map((auto) => (
-                <tr key={auto.id}>
-                  <td>{auto.anio}</td>
-                  <td>{auto.marca}</td>
-                  <td>{auto.modelo}</td>
-                  <td>{auto.kilometraje}</td>
-                  <td>{auto.combustible}</td>
-                  <td>{auto.importado}</td>
-      
-                  <td>
-                    {/* ---------- Agrego consegui patente  -------*/}
-                    {/* ---------- interpolacion de varieables  -------*/}
-                    <Link to={`/compra/${auto.id}`}>
-                      <Button variant="primary">Auto </Button>
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-              </div>
+      <Row>
+          {autos.map((auto) => (
+            <Col sm={4} key={auto.id}>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={auto.imagen} />
+                <Card.Body>
+                  <Card.Title>{auto.marca}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{auto.modelo}</Card.Subtitle>
+                  <Card.Text>
+                    {auto.anio}
+                  </Card.Text>
+                  <Card.Title>${auto.precio}</Card.Title>
+                  <Link to={`/compra/${auto.id}`}>
+                    <Button style={{ fontWeight: 'bold' }} variant="primary">VER MAS +</Button>
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        </div >
 
     </>
   )

@@ -10,8 +10,8 @@ export const autos=[
       "combustible": "Nafta",
       "importado": "no",
       "reserva": "si",
-      "precio": 0,
-      "imagen": "imagen_corolla.jpg"
+      "precio":  25000,
+      "imagen": "../../img/toyota-corolla-2020.jpg"
     },
     {
       "id": "2",
@@ -24,7 +24,7 @@ export const autos=[
       "combustible": "Nafta",
       "importado": "no",
       "reserva": "no",
-      "precio": 0,
+      "precio": 22500,
       "imagen": "imagen_civic.jpg"
     },
     {
@@ -38,7 +38,7 @@ export const autos=[
       "combustible": "Nafta",
       "importado": "si",
       "reserva": "si",
-      "precio": 0,
+      "precio": 35000,
       "imagen": "imagen_mustang.jpg"
     },
     {
@@ -52,7 +52,7 @@ export const autos=[
       "combustible": "Nafta",
       "importado": "no",
       "reserva": "no",
-      "precio": 0,
+      "precio": 32000,
       "imagen": "imagen_camaro.jpg"
     },
     {
@@ -66,7 +66,7 @@ export const autos=[
       "combustible": "Nafta",
       "importado": "no",
       "reserva": "si",
-      "precio": 0,
+      "precio": 20000,
       "imagen": "imagen_golf.jpg"
     },
     {
@@ -80,7 +80,7 @@ export const autos=[
       "combustible": "Híbrido",
       "importado": "no",
       "reserva": "no",
-      "precio": 0,
+      "precio": 28500,
       "imagen": "imagen_rav4.jpg"
     },
     {
@@ -94,7 +94,7 @@ export const autos=[
       "combustible": "Nafta",
       "importado": "si",
     "reserva": "si",
-    "precio": 0,
+    "precio": 30000,
     "imagen": "imagen_cx5.jpg"
   },
   {
@@ -108,7 +108,7 @@ export const autos=[
     "combustible": "Nafta",
     "importado": "no",
     "reserva": "no",
-    "precio": 0,
+    "precio": 18000,
     "imagen": "imagen_sentra.jpg"
   },
   {
@@ -122,7 +122,7 @@ export const autos=[
     "combustible": "Nafta",
     "importado": "no",
     "reserva": "si",
-    "precio": 0,
+    "precio": 24000,
     "imagen": "imagen_accord.jpg"
   },
   {
@@ -136,7 +136,7 @@ export const autos=[
     "combustible": "Nafta",
     "importado": "si",
     "reserva": "no",
-    "precio": 0,
+    "precio": 33000,
     "imagen": "imagen_explorer.jpg"
   },
   {
@@ -150,7 +150,7 @@ export const autos=[
     "combustible": "Diésel",
     "importado": "no",
     "reserva": "si",
-    "precio": 0,
+    "precio": 26500,
     "imagen": "imagen_tiguan.jpg"
     }
 ]
