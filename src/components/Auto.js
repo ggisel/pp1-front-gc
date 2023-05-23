@@ -40,13 +40,14 @@ const Auto = () => {
           <h2 style={{ fontSize: '14px', color: 'gray' }}>Kilometraje: {autoSelected.kilometraje} km</h2>
           <h2 style={{ fontSize: '14px', color: 'gray' }}>Importado:{autoSelected.importado}</h2>
 
-          <Button onClick={() => setLgShow(true)} style={{ fontWeight: 'bold' }} variant="primary">
+          <Button onClick={() => setLgShow(true)} style={{ fontWeight: 'bold' }} variant="outline-dark">
             Consulta
           </Button>{' '}
-          <Button style={{ fontWeight: 'bold' }} variant="primary">Reserva $$$</Button> {' '}
-          <Button variant="primary" onClick={handleShow}>
+          <Button style={{ fontWeight: 'bold' }} variant="dark" onClick={handleShow}>
             Observaciones
-          </Button>
+          </Button>{' '}
+          <Button style={{ fontWeight: 'bold' }} variant="warning">Reserva $$$</Button> {' '}
+          
 
         </Col>
       </Row>
@@ -60,7 +61,7 @@ const Auto = () => {
         </Modal.Header>
         <Modal.Body>Distintas observaciones del auto</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="warning" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>
@@ -171,7 +172,7 @@ const Auto = () => {
                 <Form.Control as="textarea" placeholder="Mensaje (opcional)" rows={3} />
               </Col>
             </Form.Group>
-            <Button variant="primary">Enviar datos</Button>
+            <Button variant="warning">Enviar datos</Button>
           </Form>
 
 

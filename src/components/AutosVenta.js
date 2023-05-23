@@ -26,7 +26,7 @@ const AutosVenta = () => {
                   </Card.Text>
                   <Card.Title>${auto.precio}</Card.Title>
                   <Link to={`/compra/${auto.id}`}>
-                    <Button style={{ fontWeight: 'bold' }} variant="primary">VER MAS +</Button>
+                    <Button style={{ fontWeight: 'bold' }} variant="warning">VER MAS +</Button>
                   </Link>
                 </Card.Body>
               </Card>
