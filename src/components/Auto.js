@@ -5,12 +5,12 @@ import { autos } from './autos';
 const Auto = () => {
   
   let { autoId } = useParams();
-  let autoSelected = autos.find(autos => autos.id === autoId);
+  let autoSelected = autos.find(auto => auto.id === autoId);
   
   return (
       <>
       <h1 id="titulo-ventana-auto">Auto</h1>
-      <h1 id="titulo-ventana-auto">{autoSelected.name}</h1>
+      <h1 id="titulo-ventana-auto">{autoSelected.marca}</h1>
       </>
   )
 }
