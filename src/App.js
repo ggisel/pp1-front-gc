@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 
 /*----- Agrego conseguir dni y mail--------*/
 import { AppProvider } from './components/AppContext';
+import Autos from './components/Autos';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
               {/*boton de finalizar */}
               <Route path='/boleta-cotizacion' element={<Boleta />} />
 
+              {/*boton de ventana-autos */}
+              <Route path='/compra' element={<Autos />} />
               <Route path='/' element={<Footer />} />
             </Route>
 

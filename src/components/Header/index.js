@@ -21,6 +21,8 @@ const Header = () => {
             <Nav className="me-auto">
                 <Nav.Link as={Link} to="/" >Agenda de Visitas</Nav.Link>
                 <Nav.Link as={Link} to="/cotizar">Cotizar vehiculos</Nav.Link>
+
+                <Nav.Link as={Link} to="/compra">Comprar vehiculos</Nav.Link>
                 <Nav.Link as={Link} to="/">Mis datos</Nav.Link>          
             </Nav>
             </Navbar.Collapse>
