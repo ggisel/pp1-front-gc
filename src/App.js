@@ -11,7 +11,8 @@ import Footer from './components/Footer';
 
 /*----- Agrego conseguir dni y mail--------*/
 import { AppProvider } from './components/AppContext';
-import Autos from './components/Autos';
+import AutosVenta from './components/AutosVenta';
+import Auto from './components/Auto';
 
 function App() {
   return (
@@ -21,6 +22,13 @@ function App() {
         <AppProvider>
           <Routes>
             <Route path='/' element={<Header />}>
+              {/*boton de ventana-autos */}
+              <Route path='/compra' element={<AutosVenta />} />
+              <Route path='/compra/:autoId' element={<Auto />} />
+
+
+
+
               <Route index element={<Inicio />} />
               <Route path='cotizar' element={<Cotizar />} />
 
@@ -32,8 +40,7 @@ function App() {
               {/*boton de finalizar */}
               <Route path='/boleta-cotizacion' element={<Boleta />} />
 
-              {/*boton de ventana-autos */}
-              <Route path='/compra' element={<Autos />} />
+              
               <Route path='/' element={<Footer />} />
             </Route>
 
