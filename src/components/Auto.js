@@ -20,8 +20,8 @@ const [show, setShow] = useState(false);
 
   return (
     <>
-      <h1 id="titulo-ventana-auto">Auto</h1>
-    <Row>
+      <h1 id="titulo-ventana-auto">Reservar Auto</h1>
+    <Row style={{ padding: '2em'}}>
         <Col xs={12} md={6}>
           <Image src={autoSelected.imagen} alt="Descripción de la imagen" fluid />
         </Col>

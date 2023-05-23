@@ -25,7 +25,8 @@ export const autos=[
       "importado": "no",
       "reserva": "no",
       "precio": 22500,
-      "imagen": "imagen_civic.jpg"
+      "imagen": "../../img/toyota-corolla-2020.jpg"
+
     },
     {
       "id": "3",
@@ -39,7 +40,8 @@ export const autos=[
       "importado": "si",
       "reserva": "si",
       "precio": 35000,
-      "imagen": "imagen_mustang.jpg"
+      "imagen": "../../img/toyota-corolla-2020.jpg"
+
     },
     {
       "id": "4",
@@ -53,7 +55,8 @@ export const autos=[
       "importado": "no",
       "reserva": "no",
       "precio": 32000,
-      "imagen": "imagen_camaro.jpg"
+      "imagen": "../../img/toyota-corolla-2020.jpg"
+
     },
     {
       "id": "5",
@@ -67,7 +70,8 @@ export const autos=[
       "importado": "no",
       "reserva": "si",
       "precio": 20000,
-      "imagen": "imagen_golf.jpg"
+      "imagen": "../../img/toyota-corolla-2020.jpg"
+
     },
     {
       "id": "6",
@@ -81,7 +85,8 @@ export const autos=[
       "importado": "no",
       "reserva": "no",
       "precio": 28500,
-      "imagen": "imagen_rav4.jpg"
+      "imagen": "../../img/toyota-corolla-2020.jpg"
+
     },
     {
       "id": "7",
@@ -95,7 +100,8 @@ export const autos=[
       "importado": "si",
     "reserva": "si",
     "precio": 30000,
-    "imagen": "imagen_cx5.jpg"
+    "imagen": "../../img/toyota-corolla-2020.jpg"
+
   },
   {
     "id": "8",
@@ -109,7 +115,8 @@ export const autos=[
     "importado": "no",
     "reserva": "no",
     "precio": 18000,
-    "imagen": "imagen_sentra.jpg"
+    "imagen": "../../img/toyota-corolla-2020.jpg"
+
   },
   {
     "id": "9",
@@ -123,7 +130,8 @@ export const autos=[
     "importado": "no",
     "reserva": "si",
     "precio": 24000,
-    "imagen": "imagen_accord.jpg"
+    "imagen": "../../img/toyota-corolla-2020.jpg"
+
   },
   {
     "id": "10",
@@ -137,7 +145,8 @@ export const autos=[
     "importado": "si",
     "reserva": "no",
     "precio": 33000,
-    "imagen": "imagen_explorer.jpg"
+    "imagen": "../../img/toyota-corolla-2020.jpg"
+
   },
   {
     "id": 21,
@@ -151,6 +160,7 @@ export const autos=[
     "importado": "no",
     "reserva": "si",
     "precio": 26500,
-    "imagen": "imagen_tiguan.jpg"
+    "imagen": "../../img/toyota-corolla-2020.jpg"
+
     }
 ]

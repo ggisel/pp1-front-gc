@@ -11,11 +11,11 @@ const AutosVenta = () => {
   });*/
   return (
     <>
-      <h1 id="titulo-ventana-autos">Comprar Vehículos</h1>
+      <h1 id="titulo-ventana-autos">Comprar Vehículo</h1>
       <div id="auto-cuadro">
-      <Row>
+      <Row style={{ padding: '2em'}}>
           {autos.map((auto) => (
-            <Col sm={4} key={auto.id}>
+            <Col sm={4} key={auto.id} style={{ marginBottom: '2em' }}>
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={auto.imagen} />
                 <Card.Body>
